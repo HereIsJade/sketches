@@ -2,13 +2,13 @@ console.log("Scene No.1");
 
 
 const particlesNum = 100;
-const maxDist = 100;
+const maxDist = 50;
 let particles = [];
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
     background(0,0,0);
-
+    noCursor();
     for(let i = 0; i < particlesNum; i++){
         particles.push(new Particle(random(width),random(height),i));
     }
@@ -17,7 +17,7 @@ function setup(){
 function draw(){
     // clear();
     background(0,0,0,50);
-    
+
 
     particles.forEach(function(element) {
         var e = element;
@@ -26,7 +26,7 @@ function draw(){
         e.update();
         e.display();
         // if(frameCount%100==0){
-        //     element.glitch();            
+        //     element.glitch();
         // }
     }, this);
 }
@@ -34,9 +34,7 @@ function draw(){
 function mouseDragged(){
     particles.forEach(function(element) {
         let mousePos = createVector(mouseX, mouseY);
-        element.applyForce(mousePos);        
+        element.applyForce(mousePos);
         // console.log(mousePos);
     }, this);
 }
-
-

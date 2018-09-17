@@ -20,6 +20,7 @@
 		<script src="js/kaleidoscope/stats.min.js"></script>
 
 		<script>
+		document.body.style.cursor = 'none';
 
 			var container, stats;
 			var camera, scene, renderer, group, particle;
@@ -84,7 +85,7 @@
 				group = new THREE.Group();
 				scene.add( group );
 
-				for ( var i = 0; i < 2000; i++ ) {
+				for ( var i = 0; i < 3500; i++ ) {
 
 					// //draw a material on canvas
 					// var material = new THREE.SpriteCanvasMaterial( {
@@ -102,7 +103,7 @@
 					particle.position.x = Math.random() * 2000 - 1000;
 					particle.position.y = Math.random() * 2000 - 1000;
 					particle.position.z = Math.random() * 2000 - 1000;
-					particle.scale.x = particle.scale.y = Math.random() * 60 + 10;
+					particle.scale.x = particle.scale.y = Math.random() * 15 + 10;
 					group.add( particle );
 
 				}
